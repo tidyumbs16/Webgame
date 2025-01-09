@@ -1,0 +1,1266 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --font-family: 'Titillium', 'sans-serif';
+    --main-color: #ffc311;
+    --cta-text-color: #0A1428;
+    --cta-bg-color: #59C1DE; /* เก็บค่าเดียวที่ต้องการ */
+    --cta-disabled-text-color: #9da1a9;
+    --cta-disabled-bg-color: #e6e7e9;
+    --cta-hover-text-color: #0A1428;
+    --cta-hover-bg-color: #7acde4; /* เพิ่ม ; */
+}
+
+ .container{
+     max-width: 1200px;
+     margin: auto;
+ }
+ 
+ .flex{
+     display: flex;
+     align-items: center;
+ }
+ 
+ a{
+     text-decoration: none ;
+ }
+ 
+ li{
+     list-style: none;
+ }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    
+    width: 100%;
+    height: 100%;
+    font-family: 'Noto Sans', sans-serif;
+  
+}
+
+/* Header styling */
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('your-image.jpg') no-repeat center center; /* เปลี่ยนให้เป็นภาพพื้นหลัง */
+    background-size: cover; /* ให้ภาพเต็มขนาด */
+  
+    transition: background 1s ease-in-out; /* เพิ่ม transition ให้การเปลี่ยนภาพนุ่มนวล */
+}
+
+header:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5); /* เปลี่ยนเป็นความมืดที่อ่อนลง */
+}
+
+/* Navigation bar */
+.nav1 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    z-index: 2;
+    position: relative;
+}
+
+/* Icon styling */
+.icons {
+    display: flex;
+    gap: 20px;
+    z-index: 2;
+    position: relative;
+}
+
+.icons i {
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease; /* เพิ่ม transition ให้กับไอคอน */
+}
+
+.icons i:hover {
+    color: var(--main-color, #f39c12); /* เปลี่ยนสีเมื่อ hover */
+    transform: scale(1.2); /* เพิ่มการขยายขนาดไอคอน */
+}
+
+/* Button Styling */
+.lsbtn button {
+    border: none;
+    color: #fff;
+    background-color: var(--cta-hover-bg-color, #f39c12);
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 2;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    border-radius: 30px; /* ทำมุมโค้งมนให้ปุ่ม */
+    cursor: pointer;
+}
+
+/* First button styling */
+.lsbtn button:nth-child(1) {
+    margin-right: 10px;
+}
+
+/* Button hover effect */
+.lsbtn button:hover {
+    background-color: #fff;
+    color: black;
+    transform: translateY(-3px); /* การเลื่อนขึ้นเล็กน้อยเมื่อ hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav1 {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .icons i {
+        font-size: 1.2rem; /* ลดขนาดไอคอนลงเมื่อหน้าจอเล็ก */
+    }
+
+    .lsbtn button {
+        font-size: 12px;
+        padding: 8px 14px;
+    }
+}
+
+/* Main navigation bar */
+.mainnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* จัดการให้อยู่กลางในแนวตั้ง */
+    padding: 20px 30px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Logo styling */
+.logo {
+    margin-left: -50px;
+    margin-top: -30px;
+    z-index: 2;
+}
+
+.logo h1 a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+    text-transform: uppercase; /* ให้ตัวอักษรเป็นตัวพิมพ์ใหญ่ */
+}
+
+.logo h1 a span {
+    color: var(--cta-bg-color, #f39c12); /* ใช้สีสำรอง */
+}
+
+.logo h1 a:hover {
+    color: var(--cta-hover-bg-color, #fff);
+}
+
+.logo h1 a:hover span {
+    color: #fff;
+}
+
+/* Navigation list styling */
+.navlist {
+    z-index: 1;
+    margin-top: 10px;
+}
+
+.navlist ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.navlist ul li a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    position: relative;
+}
+
+.navlist ul li .active {
+    color: var(--main-color, #f39c12);
+}
+
+.navlist ul li a i {
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+/* Hover effect for navigation links */
+.navlist ul li a:hover {
+    color: var(--main-color, #f39c12);
+    text-decoration: underline; /* เพิ่มเส้นใต้เมื่อ hover */
+}
+
+/* Header content styling */
+.headercont {
+    padding-top: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* จัดกลางทุกอย่างในแนวตั้ง */
+    z-index: 2;
+}
+
+.labels {
+    display: flex;
+    gap: 20px;
+    z-index: 2;
+    margin-bottom: 20px;
+}
+
+.labels i {
+    color: var(--main-color, #f39c12);
+    font-size: 16px;
+    margin-right: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.labels i:hover {
+    transform: scale(1.2); /* ขยายขนาดไอคอนเมื่อ hover */
+}
+
+.labels h3 {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: #fff;
+}
+
+.labels h3 a {
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+
+.labels h3 a span {
+    color: #fff;
+    font-weight: 400;
+}
+
+.labels h3 a:hover {
+    color: var(--main-color, #f39c12);
+}
+
+/* Header title styling */
+.headercont h1 {
+    z-index: 2;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 5vw; /* ใช้ vw เพื่อให้ขนาดเหมาะสมกับขนาดหน้าจอ */
+    font-weight: 900;
+    color: var(--cta-bg-color, #f39c12);
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* เปลี่ยนตัวอักษรให้เป็นตัวพิมพ์ใหญ่ */
+}
+
+/* Header description */
+.headercont p {
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px; /* กำหนดขนาดข้อความให้เหมาะสม */
+    margin-top: 10px;
+    opacity: 0.85;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.headercont p:hover {
+    opacity: 1; /* ทำให้ข้อความเข้มขึ้นเมื่อ hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .logo h1 a {
+        font-size: 32px; /* ปรับขนาดของ logo ในมือถือ */
+    }
+
+    .navlist ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .navlist ul li a {
+        font-size: 18px;
+    }
+
+    .headercont h1 {
+        font-size: 6vw; /* ปรับขนาด font สำหรับหน้าจอเล็ก */
+    }
+
+    .headercont p {
+        font-size: 1rem; /* ปรับขนาดข้อความในมือถือ */
+    }
+
+    .labels {
+        flex-direction: column;
+    }
+}
+
+    /* Head button container */
+.headbtn {
+    z-index: 2;
+    margin: 60px 0;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Button styling */
+.button {
+    height: 50px;
+    width: 150px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    border-bottom: 2px solid var(--main-color, #f39c12);
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Button hover effect */
+.button:hover {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+/* Button after effect for type1 and type2 */
+.type1::after, .type2::after {
+    content: 'CLICK';
+    height: 50px;
+    width: 150px;
+    background-color: var(--main-color, #f39c12);
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(50px);
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    letter-spacing: 1px;
+}
+
+/* Button before effect for type1 and type2 */
+.type1::before, .type2::before {
+    content: 'GAME DETAILS';
+    height: 50px;
+    width: 150px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(0px) scale(1.2);
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    letter-spacing: 1px;
+}
+
+/* Different content for type2 */
+.type2::before {
+    content: 'LETS TO PLAY';
+}
+
+/* Hover effect for type1 and type2 */
+.type1:hover::after, .type2:hover::after {
+    transform: translateY(0) scale(1.2);
+}
+
+.type1:hover::before, .type2:hover::before {
+    transform: translateY(-70px) scale(0) rotate(120deg);
+}
+
+/* Dots styling */
+.dots {
+    z-index: 2;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 13px;
+    display: flex;
+}
+
+.dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid rgba(225, 225, 225, 0.7);
+    transition: 0.2s linear;
+    cursor: pointer;
+}
+
+.dot:hover {
+    background-color: #fff;
+    transform: scale(1.2); /* เพิ่มการขยายเมื่อ hover */
+}
+
+/* Responsive Design for small screens */
+@media (max-width: 768px) {
+    .button {
+        width: 120px; /* ปรับความกว้างของปุ่มในมือถือ */
+        font-size: 0.9rem; /* ปรับขนาดตัวอักษร */
+    }
+
+    .type1::after, .type2::after {
+        font-size: 1rem; /* ปรับขนาดข้อความ */
+    }
+
+    .type1::before, .type2::before {
+        font-size: 0.8rem; /* ปรับขนาดข้อความ */
+    }
+
+    .dots {
+        bottom: 10%;
+    }
+
+    .dot {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+ /** main**/
+
+ .threebox {
+    display: flex;
+    flex-wrap: wrap; /* ทำให้กล่องยืดหยุ่นเมื่อหน้าจอเล็ก */
+    gap: 30px; /* กำหนดช่องว่างระหว่างกล่อง */
+    justify-content: space-between; /* จัดเรียงกล่องให้มีช่องว่างระหว่างกัน */
+    padding: 20px; /* เพิ่มช่องว่างรอบๆ กล่อง */
+    margin-top: 30px;
+}
+
+.threebox .cbox {
+    width: calc(33.333% - 20px); /* ให้แต่ละกล่องมีความกว้าง 1/3 ของพื้นที่รวม */
+    position: relative;
+    height: 250px;
+    margin-top: 10px;
+    border-radius: 8px; /* เพิ่มมุมโค้งมนให้กล่อง */
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กล่อง */
+    transition: transform 0.3s ease-in-out;
+}
+
+.threebox .cbox:hover {
+    transform: scale(1.05); /* ขยายกล่องเล็กน้อยเมื่อ hover */
+}
+
+@media (max-width: 768px) {
+    .threebox .cbox {
+        width: calc(50% - 20px); /* เมื่อหน้าจอเล็กกว่า 768px จะแสดง 2 กล่องในแถว */
+    }
+}
+
+@media (max-width: 480px) {
+    .threebox .cbox {
+        width: 100%; /* เมื่อหน้าจอเล็กสุด กล่องจะแสดงแค่ 1 กล่องในแถว */
+    }
+}
+
+    
+ 
+ .cbox {
+    position: relative;
+    width: 33%;
+    height: 250px;
+    margin-top: 65px;
+    border-radius: 10px; /* เพิ่มมุมโค้งมนให้กล่อง */
+    overflow: hidden; /* ทำให้ไม่เกินขอบกรอบ */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเพื่อให้ดูมีมิติ */
+    transition: transform 0.3s ease-in-out; /* เพิ่มการเคลื่อนไหวเมื่อ hover */
+}
+
+.cbox:hover {
+    transform: scale(1.05); /* ขยายกล่องเล็กน้อยเมื่อ hover */
+}
+
+.cbox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out; /* เพิ่มการเปลี่ยนแปลงความโปร่งใสเมื่อ hover */
+}
+
+.cbox:hover img {
+    opacity: 0.8; /* ทำให้ภาพโปร่งใสเมื่อ hover */
+}
+
+.cbox::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.4); /* ลดความทึบให้โปร่งขึ้น */
+    transition: background 0.3s ease-in-out;
+}
+
+.cbox:hover::before {
+    background: rgba(0, 0, 0, 0.3); /* ลดความทึบของพื้นหลังเมื่อ hover */
+}
+
+.cboxde {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* จัดตำแหน่งข้อความให้อยู่กลาง */
+    z-index: 2;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* เพิ่มพื้นหลังบางส่วน */
+    border-radius: 8px;
+    width: 80%; /* ทำให้กล่องข้อความไม่เกินขอบ */
+}
+
+.cboxde h5 {
+    color: var(--main-color);
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.cboxde h2 {
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase; /* ทำให้ชื่อเป็นตัวพิมพ์ใหญ่ */
+}
+
+.cboxde p {
+    font-size: 14px;
+    margin: 20px 0;
+    margin-bottom: 33px;
+    line-height: 23px;
+    color: #ffffffca;
+}
+
+.cboxde a {
+    padding: 12px 30px;
+    font-weight: 600;
+    color: var(--main-color);
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    border-bottom: 2px solid var(--cta-hover-bg-color);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    z-index: 9;
+    border-radius: 5px; /* ทำให้ปุ่มมีมุมโค้ง */
+}
+
+.cboxde a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    bottom: 0;
+    left: 0;
+    display: block;
+    background-color: var(--cta-hover-bg-color);
+    z-index: -1;
+    transition: .3s;
+}
+
+.cboxde a:hover::before {
+    height: 100%;
+}
+
+.cboxde a:hover {
+    color: #000; /* เปลี่ยนสีข้อความเมื่อ hover */
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้ข้อความ */
+}
+
+
+.filter{
+   display: flex;
+   justify-content: center;
+    gap: 30px;
+    margin-bottom:50px ;
+
+}
+
+
+
+/* สไตล์ของปุ่ม */
+.filter button {
+    margin-top: 5rem;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px 30px; /* เพิ่มพื้นที่ภายในปุ่ม */
+    border: 2px solid #59C1DE;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 30px; /* ขอบโค้งมน */
+    transition: all 0.3s ease-in-out; /* เพิ่มการเปลี่ยนแปลงที่นุ่มนวล */
+    margin-bottom: 50px;
+    background-color: #59C1DE;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเบาๆ */
+}
+
+.filter button:hover {
+    background-color: #4ca3c8; /* เปลี่ยนสีเมื่อวางเมาส์ */
+    color: #fff;
+    transform: translateY(-3px); /* การเคลื่อนไหวขึ้นเล็กน้อย */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* เงาเข้มขึ้นเมื่อวางเมาส์ */
+}
+
+.filter button.active {
+    background-color: #4ca3c8; /* สีพื้นหลังเมื่อปุ่มถูกเลือก */
+    color: #fff;
+    transform: translateY(-3px); /* การเคลื่อนไหวขึ้นเล็กน้อยเมื่อปุ่มถูกเลือก */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* เงาเข้มขึ้นเมื่อปุ่มถูกเลือก */
+}
+
+/* เพิ่มเอฟเฟกต์สำหรับการวางเมาส์ในปุ่ม */
+.filter button:focus {
+    outline: none; /* ลบขอบกรอบเมื่อเลือกปุ่ม */
+    box-shadow: 0 0 8px rgba(0, 174, 255, 0.6); /* เพิ่มแสงไฟรอบๆ เมื่อกดปุ่ม */
+}
+
+
+
+
+.gamecards{
+flex-wrap: wrap;
+display: flex;
+justify-content: space-between;
+overflow: hidden;
+}
+
+/* การ์ด */
+.cards {
+    margin-top: 30px;
+    min-width: 280px;
+    max-width: 280px;
+    height: auto;
+    border-radius: 15px; /* เพิ่มความโค้งให้กับขอบ */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* เงาที่ละเอียด */
+    overflow: hidden; /* ซ่อนเนื้อหาที่เกิน */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* การเคลื่อนไหวที่เนียน */
+}
+
+/* สไตล์เมื่อวางเมาส์ที่การ์ด */
+.cards:hover {
+    transform: translateY(-10px); /* การเคลื่อนที่ขึ้นเล็กน้อยเมื่อวางเมาส์ */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้การ์ดเมื่อวางเมาส์ */
+}
+
+/* การ์ดที่มีภาพ */
+.carding {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px 15px 0 0; /* โค้งขอบด้านบน */
+    overflow: hidden;
+}
+
+/* การตั้งค่าภาพให้ดูดี */
+.carding img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* เติมเต็มพื้นที่โดยไม่บิดเบือน */
+    transition: transform 0.3s ease; /* การเคลื่อนไหวของภาพ */
+}
+
+/* เมื่อวางเมาส์ที่การ์ดขยายภาพเล็กน้อย */
+.carding:hover img {
+    transform: scale(1.1); /* ขยายภาพให้ใหญ่ขึ้น */
+}
+
+/* เนื้อหาภายในการ์ด */
+.cardinfo {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 0 0 15px 15px; /* โค้งขอบด้านล่าง */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* ชื่อของการ์ด */
+.cardinfo h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* ข้อความหรือปุ่มในการ์ด */
+.cardinfo .playteg h3 {
+    font-size: 16px;
+    color: #59C1DE;
+    margin-top: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* ลิงค์ "How to play" */
+.cardinfo a {
+    color: #59C1DE;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.cardinfo a:hover {
+    color: #FFD43B; /* เปลี่ยนสีเมื่อวางเมาส์ */
+}
+
+/* ไอคอนในปุ่ม */
+.playteg i {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+
+.tags{
+    position: absolute;
+    bottom: 6%;
+    right: 6%;
+}
+
+.tags p{
+    color: var(--cta-disabled-bg-color);
+    font-size: 12px;
+    margin-right: 5px;
+    font-family:fantasy;
+}
+
+.tags i{
+    color: var(--main-color);
+}
+
+.cardinfo h2{
+    width:100% ;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #222;
+    margin-top: 10px;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-wrap: nowrap;
+    transition: .3 linear;
+    text-transform: uppercase;
+}
+
+.cardinfo:hover h2{
+color: var(--main-color);
+}
+
+.playteg{
+    gap: 10px;
+}
+
+.playteg i{
+    color: var(--main-color);
+font-size: 14px;
+}
+
+.playteg h3 a{
+    font-size: 13px;
+    color: #888;
+    font-weight: 500;
+    transition: .2s linear;
+    text-transform: uppercase;
+
+}
+
+.playteg h3 {
+    gap: 2px;
+}
+
+.allgamebtn{
+    display: flex;
+    justify-content: center;
+}
+
+.allgamebtn a button{
+    margin: 40px auto;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px 20px;
+    background-color: transparent;
+    border: 2px solid var(--main-color);
+    cursor: pointer;
+    color: var(--main-color);
+    transition: .3s linear;
+    }
+
+    .allgamebtn a button:hover{
+        background-color: var(--main-color);
+        color: #fff;
+    }
+
+ /* Container ของส่วนที่ใช้แสดง */
+.newreleased {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background: url('noxus.png') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    max-width: 1200px;
+    height: 70vh;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    color: white;
+    text-align: left;
+}
+
+.newreleased::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* ความมืดที่มากขึ้น */
+    z-index: -1;
+    border-radius: 20px; /* ให้ความโค้งตรงนี้เช่นกัน */
+}
+
+/* ส่วนหัวของข้อความ */
+.newreleasedtitle {
+    margin-bottom: 20px;
+}
+
+.newreleasedtitle h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 2px;
+    line-height: 1.3;
+}
+
+.newreleasedtitle h2:last-child {
+    color: crimson; /* สีทองสำหรับข้อความสุดท้าย */
+}
+
+/* ข้อความเพิ่มเติม */
+.newreleased p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 10px 0 20px;
+    max-width: 750px;
+}
+
+/* Flex สำหรับปุ่มและจัดการรูปแบบ */
+.newreleased .flex {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    align-items: center;
+}
+
+/* สไตล์ปุ่ม Read More */
+.newreleased .flex a {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    text-align: center;
+}
+
+.newreleased .flex a:hover {
+    color: #333;
+    background-color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* การตอบสนองสำหรับมือถือ */
+@media (max-width: 768px) {
+    .newreleased {
+        height: 50vh;
+        padding: 20px;
+    }
+
+    .newreleasedtitle h2 {
+        font-size: 2rem;
+    }
+
+    .newreleased p {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+
+    .newreleased .flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newreleased .flex a {
+        width: 100%;
+        padding: 15px 30px;
+    }
+}
+
+#updateImage {
+    display: none;
+    max-width: 100%; /* กำหนดให้ภาพแสดงเต็มความกว้าง */
+    height: auto; /* ให้ความสูงของภาพปรับตามอัตราส่วน */
+    border-radius: 10px; /* มุมโค้งของภาพ */
+    margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+}
+
+.blogandnews {
+    padding: 50px 0;
+    background-color: #f7f7f7;
+}
+
+.blogandnews h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.blogandnews h2 span {
+    color: var(--cta-bg-color);
+}
+
+.threecards {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.tcard {
+    width: 30%;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.tcard img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.tcarddetails {
+    padding: 20px;
+}
+
+.tcarddetails h3 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.tcarddetails p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.postby {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.postby i {
+    color: #f39c12;
+}
+
+.flex {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.flex i {
+    color: #f39c12;
+}
+
+.tcard:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.tcard:hover img {
+    transform: scale(1.05);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .tcard {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .threecards {
+        flex-direction: column;
+    }
+}
+
+    
+.kingdom {
+    padding: 50px 0;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+h2 span {
+    color: #f39c12;
+}
+
+.kingdommain {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.kingcard {
+    position: relative;
+    width: 30%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.kingcard:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.kingimg {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.kingcard:hover .kingimg {
+    opacity: 0.7;
+}
+
+.kingdomdetails {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-top: 3px solid #f39c12;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.kingdomdetails h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.kingdomdetails p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.kingdomdetails .post {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1rem;
+}
+
+.kingdomdetails i {
+    color: #f39c12;
+}
+
+.kingdomdetails .flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.kingdomdetails .flex h5 {
+    font-size: 1rem;
+    color: #bbb;
+}
+
+.kingdomdetails .flex i {
+    font-size: 1.2rem;
+}
+
+
+footer {
+    background-color: var(--cta-hover-text-color);
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    padding: 50px 20px;
+    position: relative;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-logo h3 {
+    font-size: 32px;
+    color: var(--cta-bg-color); /* Accent color */
+}
+
+.footer-logo p {
+    color: #ddd;
+    font-size: 14px;
+}
+
+.footer-links h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 10px 0;
+}
+
+.footer-links ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: var(--cta-hover-bg-color);
+}
+
+.footer-social h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #ddd;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--cta-bg-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    color: #bbb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+    
+    
+
+
+ 
+    
+    
+
+    

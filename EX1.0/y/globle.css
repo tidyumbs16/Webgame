@@ -1,0 +1,29 @@
+:root {
+   --font-family: 'Titillium',sans-serif;
+    --main-color: #ffc311;
+    --cta-text-color: #0A1428;
+    --cta-bg-color: #59C1DE;
+    --cta-disabled-text-color: #9da1a9;
+    --cta-disabled-bg-color: #e6e7e9;
+    --cta-hover-text-color: #0A1428;
+    --cta-hover-bg-color: #7acde4;
+    --cta-bg-color: #C8AA6E;
+}
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+a{
+    text-decoration: none ;
+}
+
+li{
+    list-style: none;
+}
